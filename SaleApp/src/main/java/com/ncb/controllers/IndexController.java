@@ -5,6 +5,7 @@
 package com.ncb.controllers;
 
 import com.ncb.services.CategoryService;
+import com.ncb.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,10 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
     @Autowired
     private  CategoryService cateService;
+    @Autowired
+    private ProductService prodService;
     
     @RequestMapping("/")
     public String index(Model model){
         model.addAttribute("categories", this.cateService.getCates());
+        model.addAttribute("products", this.prodService.getProds());
+
         return "index";
     }
 }

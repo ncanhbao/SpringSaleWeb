@@ -13,13 +13,17 @@
         <title>Trang chủ</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
         <ul>
             <c:forEach items="${categories}" var="c">
                 <li>
                     ${c.name}
-                </li>
-            </c:forEach>
-        </ul>
-    </body>
+                    <c:forEach items="${products}" var="c">
+                    <li>
+                        ${c.name}
+                    </li>
+                </c:forEach>
+            </li>
+        </c:forEach>
+    </ul>
+</body>
 </html>
