@@ -6,12 +6,13 @@ package com.ncb.services;
 
 import com.ncb.pojo.Product;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author admin
  */
 public interface ProductService {
-    List<Product> getProds();
-    public void addOrUpdate(Product p);
+   List<Product> getProds(Map<String, String> params);
+    void addOrUpdate(Product p);
 }

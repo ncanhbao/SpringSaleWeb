@@ -8,6 +8,7 @@ import com.ncb.pojo.Product;
 import com.ncb.repositories.ProductRepository;
 import com.ncb.services.ProductService;
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,18 +17,19 @@ import org.springframework.stereotype.Service;
  * @author admin
  */
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
+
     @Autowired
     private ProductRepository prodRepo;
 
     @Override
-    public List<Product> getProds() {
-        return this.prodRepo.getProds();
+    public List<Product> getProds(Map<String, String> params) {
+        return this.prodRepo.getProds(params);
     }
 
     @Override
     public void addOrUpdate(Product p) {
         this.prodRepo.addOrUpdate(p);
     }
-    
+
 }

@@ -6,11 +6,12 @@ package com.ncb.repositories;
 
 import com.ncb.pojo.Product;
 import java.util.List;
+import java.util.Map;
 /**
  *
  * @author ncanh
  */
 public interface ProductRepository {
-    List<Product> getProds();
     void addOrUpdate(Product p);
+    public List<Product> getProds(Map<String, String> params);
 }
